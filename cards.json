@@ -1,0 +1,1190 @@
+[
+  {
+    "id": 1,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Two Sum",
+    "front": "Two Sum Unsorted array, find two numbers adding to target. Pattern? Complexity?",
+    "back": "Hash map, one pass. Store value -> index as you go, look up target - x. O(n) time, O(n) space. Signal: need complement lookup, not sorted.",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "hashing"
+    ]
+  },
+  {
+    "id": 2,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Contains Duplicate",
+    "front": "Contains Duplicate How do you check in O(n)?",
+    "back": "Hash set. Insert as you go, return True on repeat. O(n) time, O(n) space. Sorting is O(n log n) and also works, but set is the interview answer.",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "hashing"
+    ]
+  },
+  {
+    "id": 3,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Valid Anagram",
+    "front": "Valid Anagram Two strings, same letters? Fastest check?",
+    "back": "Count letters (26-array or Counter) and compare. Or sort both O(n log n). Counting is O(n) time, O(1) space for lowercase.",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "hashing"
+    ]
+  },
+  {
+    "id": 4,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Group Anagrams",
+    "front": "Group Anagrams Group strings that are anagrams. Key?",
+    "back": "Key = sorted string, or 26-count tuple. Dict key -> list. O(n * k log k) with sort, O(n * k) with counts. k = word length.",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "hashing"
+    ]
+  },
+  {
+    "id": 5,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Top K Frequent Elements",
+    "front": "Top K Frequent Elements Return k most frequent. Better than sorting by count?",
+    "back": "Count with dict, then bucket sort by frequency (list of lists, index = count) or min-heap of size k. Bucket: O(n) time. Heap: O(n log k).",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "hashing",
+      "heap"
+    ]
+  },
+  {
+    "id": 6,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Product of Array Except Self",
+    "front": "Product of Array Except Self No division, O(n), O(1) extra space (output excluded). Trick?",
+    "back": "Prefix products left to right, then suffix products right to left, multiply into output. Two passes, no division. O(n) time.",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "prefix"
+    ]
+  },
+  {
+    "id": 7,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Longest Consecutive Sequence",
+    "front": "Longest Consecutive Sequence Unsorted array, longest run of consecutive ints, O(n). Trick?",
+    "back": "Put all in a set. Only start a run at x if x-1 is NOT in the set, then walk up. O(n) time. Sorting would be O(n log n).",
+    "tags": [
+      "neetcode",
+      "arrays",
+      "hashing"
+    ]
+  },
+  {
+    "id": 8,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Two Pointers",
+    "front": "Two Pointers When do you use it? Example?",
+    "back": "Sorted array / linked list, or pair from both ends moving inward. Examples: Two Sum II, Container With Most Water, 3Sum (sort + fix one + two pointers). Usually O(n) after O(n log n) sort.",
+    "tags": [
+      "neetcode",
+      "two-pointers"
+    ]
+  },
+  {
+    "id": 9,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Container With Most Water",
+    "front": "Container With Most Water Max area between two lines. Why does the greedy work?",
+    "back": "Left and right pointers, area = min(h[l], h[r]) * (r-l). Move the shorter side inward, because the taller side cannot improve area with a narrower width. O(n) time, O(1) space.",
+    "tags": [
+      "neetcode",
+      "two-pointers"
+    ]
+  },
+  {
+    "id": 10,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Trapping Rain Water",
+    "front": "Trapping Rain Water Signal and O(n) solution?",
+    "back": "Signal: water at i = min(max left, max right) - height[i]. Two pointers tracking left_max and right_max, move the smaller side. O(n) time, O(1) space.",
+    "tags": [
+      "neetcode",
+      "two-pointers"
+    ]
+  },
+  {
+    "id": 11,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Sliding Window",
+    "front": "Sliding Window Fixed vs variable window. When to use each?",
+    "back": "Fixed: max sum of k, or any window of exact size k. Variable: longest / shortest subarray satisfying a condition (e.g. longest substring without repeats, min window with all chars). Expand right, shrink left when invalid. Usually O(n).",
+    "tags": [
+      "neetcode",
+      "sliding-window"
+    ]
+  },
+  {
+    "id": 12,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Longest Substring Without Repeating Characters",
+    "front": "Longest Substring Without Repeating Characters Approach?",
+    "back": "Variable sliding window + last-seen index dict. Move left past the previous occurrence when you see a repeat. O(n) time, O(min(n, alphabet)) space.",
+    "tags": [
+      "neetcode",
+      "sliding-window"
+    ]
+  },
+  {
+    "id": 13,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Minimum Window Substring",
+    "front": "Minimum Window Substring Smallest window containing all chars of t. Approach?",
+    "back": "Variable window + need / have counts. Expand right until have == need, then shrink left while still valid, track best. O(n + m) time.",
+    "tags": [
+      "neetcode",
+      "sliding-window"
+    ]
+  },
+  {
+    "id": 14,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Valid Parentheses",
+    "front": "Valid Parentheses Stack rule?",
+    "back": "Push openers, pop and check match on closers. Empty stack at end = valid. Mismatch or pop from empty = invalid. O(n) time, O(n) space.",
+    "tags": [
+      "neetcode",
+      "stack"
+    ]
+  },
+  {
+    "id": 15,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Min Stack",
+    "front": "Min Stack getMin in O(1). How?",
+    "back": "Keep a second stack of minimums, push new min on every push (or only when <= current min), pop in sync. All ops O(1).",
+    "tags": [
+      "neetcode",
+      "stack"
+    ]
+  },
+  {
+    "id": 16,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Monotonic Stack",
+    "front": "Monotonic Stack Daily Temperatures / Next Greater Element. Pattern?",
+    "back": "Decreasing stack of indices. While current > stack top, pop and record answer for popped index. O(n) time. Signal: next greater / smaller element.",
+    "tags": [
+      "neetcode",
+      "stack",
+      "monotonic"
+    ]
+  },
+  {
+    "id": 17,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Binary Search template",
+    "front": "Binary Search template Write the loop invariant in one line.",
+    "back": "lo <= hi, mid = lo + (hi-lo)//2 (no overflow). If target, return; if target > mid, lo = mid+1 else hi = mid-1. O(log n) time. Binary search on answer: search a monotonic predicate, e.g. Koko Eating Bananas.",
+    "tags": [
+      "neetcode",
+      "binary-search"
+    ]
+  },
+  {
+    "id": 18,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Search in Rotated Sorted Array",
+    "front": "Search in Rotated Sorted Array Key insight?",
+    "back": "One half is always sorted. Check if target lies in the sorted half, else go to the other half. O(log n) time.",
+    "tags": [
+      "neetcode",
+      "binary-search"
+    ]
+  },
+  {
+    "id": 19,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Reverse a Linked List",
+    "front": "Reverse a Linked List Iterative, O(1) space. Steps?",
+    "back": "prev = None, cur = head. While cur: nxt = cur.next; cur.next = prev; prev = cur; cur = nxt. Return prev. O(n) time.",
+    "tags": [
+      "neetcode",
+      "linked-list"
+    ]
+  },
+  {
+    "id": 20,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Linked List Cycle",
+    "front": "Linked List Cycle Detect + find entry. Algorithm?",
+    "back": "Floyd tortoise and hare: slow +1, fast +2. If they meet, cycle exists. Reset one pointer to head, move both +1, they meet at entry. O(n) time, O(1) space.",
+    "tags": [
+      "neetcode",
+      "linked-list"
+    ]
+  },
+  {
+    "id": 21,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Merge Two Sorted Lists",
+    "front": "Merge Two Sorted Lists Approach?",
+    "back": "Dummy head, pick smaller head each step, advance. O(n+m) time, O(1) space.",
+    "tags": [
+      "neetcode",
+      "linked-list"
+    ]
+  },
+  {
+    "id": 22,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Number of Islands",
+    "front": "Number of Islands Grid of 1s and 0s, count islands. Your approach?",
+    "back": "For each unvisited land cell, BFS or DFS flood-fill and mark visited, count 1 per fill. BFS: queue, no recursion depth risk. DFS recursive is shorter to write. O(rows * cols) time. This was your Nov 9 debrief: BFS first, then recursive DFS, both with named indices.",
+    "tags": [
+      "sid",
+      "islands",
+      "bfs",
+      "dfs"
+    ]
+  },
+  {
+    "id": 23,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Tree traversal",
+    "front": "Tree traversal BFS vs DFS for trees, when each?",
+    "back": "BFS (queue): level order, shortest path in unweighted tree, level-by-level. DFS (stack / recursion): depth, path problems, validate BST with bounds. Both O(n).",
+    "tags": [
+      "neetcode",
+      "trees"
+    ]
+  },
+  {
+    "id": 24,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Validate BST",
+    "front": "Validate BST Naive inorder check vs bounds. Which is safer?",
+    "back": "Pass (low, high) bounds down. Left subtree < node < right subtree. Inorder-sorted check also works but bounds catch duplicates cleanly. O(n) time.",
+    "tags": [
+      "neetcode",
+      "trees"
+    ]
+  },
+  {
+    "id": 25,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Graph BFS",
+    "front": "Graph BFS When is BFS the right tool?",
+    "back": "Unweighted shortest path, level-by-level spread, connected components. Queue + visited set. O(V+E). DFS is for paths, cycles, topo sort, connectivity.",
+    "tags": [
+      "neetcode",
+      "graphs"
+    ]
+  },
+  {
+    "id": 26,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Clone Graph",
+    "front": "Clone Graph Approach?",
+    "back": "DFS/BFS + dict old node -> new node. Create clone on first visit, recurse / queue neighbours, link clones. O(V+E).",
+    "tags": [
+      "neetcode",
+      "graphs"
+    ]
+  },
+  {
+    "id": 27,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "DP: Climbing Stairs / 1-D DP",
+    "front": "DP: Climbing Stairs / 1-D DP Signal and recurrence?",
+    "back": "Signal: count ways / min cost, optimal substructure, overlapping subproblems. dp[i] = dp[i-1] + dp[i-2]. Only keep last two values for O(1) space.",
+    "tags": [
+      "neetcode",
+      "dp"
+    ]
+  },
+  {
+    "id": 28,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "DP: 0/1 Knapsack signal",
+    "front": "DP: 0/1 Knapsack signal How do you spot it?",
+    "back": "Pick / skip each item once, capacity constraint, maximise value. dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight] + value). Space optimise to 1-D, iterate w backwards.",
+    "tags": [
+      "neetcode",
+      "dp"
+    ]
+  },
+  {
+    "id": 29,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Backtracking",
+    "front": "Backtracking Subsets / permutations template?",
+    "back": "Choose -> explore -> unchoose. Subsets: include / skip each element. Permutations: pick unused element at each position. Prune with constraints early. Complexity is exponential by nature, state that.",
+    "tags": [
+      "neetcode",
+      "backtracking"
+    ]
+  },
+  {
+    "id": 30,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Merge Intervals",
+    "front": "Merge Intervals Steps?",
+    "back": "Sort by start. Walk, merge if current.start <= last.end (extend end to max). Else append. O(n log n) time for sort.",
+    "tags": [
+      "neetcode",
+      "intervals"
+    ]
+  },
+  {
+    "id": 31,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Heap: Kth Largest / Top K",
+    "front": "Heap: Kth Largest / Top K Min-heap vs max-heap?",
+    "back": "Kth largest in a stream: min-heap of size k, top is answer. Top K frequent: min-heap of (count, value). O(n log k). Python heapq is min-heap; negate for max.",
+    "tags": [
+      "neetcode",
+      "heap"
+    ]
+  },
+  {
+    "id": 32,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Moving Ones - your custom problem",
+    "front": "Moving Ones - your custom problem Input [1,1,0,0,1], each 1 moves once, no crossing, maximise total distance. Answer and rule?",
+    "back": "Answer 4. Optimal is max(all-left total, all-right total). Delta for flipping piece m: 2 * zeros-before-it - total-zeros. Verified against brute force to length 10 and DP to length 50. This was a custom interview variant, not LeetCode 3228.",
+    "tags": [
+      "sid",
+      "moving-ones"
+    ]
+  },
+  {
+    "id": 33,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Deployment Order - GEICO drill",
+    "front": "Deployment Order - GEICO drill Services with dependencies, find a valid deploy order. Algorithm?",
+    "back": "Topological sort (Kahn's BFS or DFS). In-degree counts, queue zero in-degree nodes, emit, decrement neighbours. Acyclic example: ['database','queue','auth','worker','api','web']. Cyclic = None, no valid order. O(V+E) time and space.",
+    "tags": [
+      "sid",
+      "geico",
+      "topo-sort"
+    ]
+  },
+  {
+    "id": 34,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Impact Analysis - GEICO drill",
+    "front": "Impact Analysis - GEICO drill Given a service graph, find all services affected by a change. Algorithm?",
+    "back": "Reverse the dependency edges, then BFS / DFS from the changed service. Visited set = affected set. O(V+E) time. Say it out loud: impact flows opposite to dependency direction.",
+    "tags": [
+      "sid",
+      "geico",
+      "graph"
+    ]
+  },
+  {
+    "id": 35,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "LRU Cache",
+    "front": "LRU Cache Design it. Data structures?",
+    "back": "Hash map + doubly linked list (Python: OrderedDict). get moves to end, put evicts from front when over capacity. O(1) get and put.",
+    "tags": [
+      "neetcode",
+      "oop",
+      "cache"
+    ]
+  },
+  {
+    "id": 36,
+    "deck": "dsa",
+    "deck_name": "DSA Patterns",
+    "title": "Rate Limiter",
+    "front": "Rate Limiter Sliding window log vs token bucket?",
+    "back": "Sliding window log: exact, stores one timestamp per request, O(n) memory. Token bucket: O(1) memory, allows bursts up to capacity, smoother. Fixed window is simplest but has the 2x boundary burst. Distributed: Redis + Lua script for atomic check-and-add.",
+    "tags": [
+      "sid",
+      "backend",
+      "rate-limiter"
+    ]
+  },
+  {
+    "id": 37,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Performance vs Scalability",
+    "front": "Performance vs Scalability Primer distinction?",
+    "back": "Performance: how fast one request is (latency). Scalability: how the system behaves as load grows. A system can be fast but not scalable, or scalable but slow per request.",
+    "tags": [
+      "primer",
+      "basics"
+    ]
+  },
+  {
+    "id": 38,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Latency vs Throughput",
+    "front": "Latency vs Throughput Define each, and the tension?",
+    "back": "Latency: time for one operation. Throughput: operations per second. Batching raises throughput but adds latency. Pipelining and parallelism raise both, up to a bottleneck.",
+    "tags": [
+      "primer",
+      "basics"
+    ]
+  },
+  {
+    "id": 39,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "CAP Theorem",
+    "front": "CAP Theorem State it in one sentence.",
+    "back": "In a distributed system with a network partition, you must choose between consistency and availability. You cannot have all three of C, A, P at once.",
+    "tags": [
+      "primer",
+      "cap"
+    ]
+  },
+  {
+    "id": 40,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "CP vs AP",
+    "front": "CP vs AP Examples?",
+    "back": "CP: consistency + partition tolerance, sacrifice availability. Example: ZooKeeper, etcd, banking ledger. AP: availability + partition tolerance, sacrifice strong consistency. Example: Cassandra, DynamoDB, DNS. Most real systems are not pure; they pick per operation.",
+    "tags": [
+      "primer",
+      "cap"
+    ]
+  },
+  {
+    "id": 41,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Eventual vs Strong Consistency",
+    "front": "Eventual vs Strong Consistency When is eventual enough?",
+    "back": "Strong: every read sees the latest write. Needed for money, inventory, auth. Eventual: reads converge after a delay. Fine for feeds, likes, recommendations, search indexes. Weak: no guarantee when, if ever, it converges.",
+    "tags": [
+      "primer",
+      "consistency"
+    ]
+  },
+  {
+    "id": 42,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Failover: Active-Passive vs Active-Active",
+    "front": "Failover: Active-Passive vs Active-Active Tradeoff?",
+    "back": "Active-passive: standby idle, simple, wastes capacity, failover takes time. Active-active: both serve traffic, better utilisation, harder to keep in sync, split-brain risk.",
+    "tags": [
+      "primer",
+      "availability"
+    ]
+  },
+  {
+    "id": 43,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Replication: Master-Slave vs Master-Master",
+    "front": "Replication: Master-Slave vs Master-Master Tradeoff?",
+    "back": "Master-slave: writes to master, reads scale on replicas, simple, replica lag. Master-master: writes to either, no single write bottleneck, conflict resolution is hard. Your R1 rule: money writes go to one Postgres primary.",
+    "tags": [
+      "primer",
+      "availability"
+    ]
+  },
+  {
+    "id": 44,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Availability in numbers",
+    "front": "Availability in numbers 99.9% and 99.99% downtime per year?",
+    "back": "99.9% (three 9s): ~8h 45m per year, ~43m per month. 99.99% (four 9s): ~52m per year, ~4m per month. Availability in sequence multiplies down; in parallel it multiplies up.",
+    "tags": [
+      "primer",
+      "availability"
+    ]
+  },
+  {
+    "id": 45,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "DNS",
+    "front": "DNS Role in system design, and drawback?",
+    "back": "Maps names to IPs, enables load balancing by returning different IPs, and failover by changing records. Drawback: caching / TTL means changes propagate slowly, and DNS itself is a dependency.",
+    "tags": [
+      "primer",
+      "dns"
+    ]
+  },
+  {
+    "id": 46,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "CDN: Push vs Pull",
+    "front": "CDN: Push vs Pull Difference?",
+    "back": "Push: you upload content to the CDN when it changes. Good for content that rarely changes. Pull: CDN fetches from origin on first request, then caches. Simpler, first request is slower. Both cut latency by serving from edge and offload origin.",
+    "tags": [
+      "primer",
+      "cdn"
+    ]
+  },
+  {
+    "id": 47,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Load Balancer: Layer 4 vs Layer 7",
+    "front": "Load Balancer: Layer 4 vs Layer 7 Difference?",
+    "back": "L4 (transport): routes by IP + port, fast, no content inspection. L7 (application): routes by HTTP headers, URL, cookies. Slower, smarter: can do path-based routing, sticky sessions, TLS termination.",
+    "tags": [
+      "primer",
+      "load-balancer"
+    ]
+  },
+  {
+    "id": 48,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Load Balancer vs Reverse Proxy",
+    "front": "Load Balancer vs Reverse Proxy Difference?",
+    "back": "Load balancer distributes traffic across many servers. Reverse proxy sits in front of servers and adds caching, compression, TLS, security, static file serving. Many boxes do both (NGINX, HAProxy).",
+    "tags": [
+      "primer",
+      "load-balancer"
+    ]
+  },
+  {
+    "id": 49,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Microservices",
+    "front": "Microservices When do they help, when do they hurt?",
+    "back": "Help: independent deploy, scale, and ownership; fault isolation. Hurt: distributed transactions, network latency, observability, versioning. Primer rule: start with a modular monolith unless you have a concrete scaling or team reason.",
+    "tags": [
+      "primer",
+      "application"
+    ]
+  },
+  {
+    "id": 50,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Service Discovery",
+    "front": "Service Discovery What problem does it solve?",
+    "back": "Services find each other by name as instances come and go, instead of hard-coded IPs. Registry + health checks (Consul, etcd, Kubernetes DNS). Without it, deploys break callers.",
+    "tags": [
+      "primer",
+      "application"
+    ]
+  },
+  {
+    "id": 51,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "SQL or NoSQL?",
+    "front": "SQL or NoSQL? Primer rule of thumb?",
+    "back": "SQL: structured data, joins, ACID, money, strong consistency. NoSQL: huge scale, flexible schema, high write volume, eventual consistency is fine. Your R1 choice: Postgres for money, because volume fit and ACID mattered more.",
+    "tags": [
+      "primer",
+      "database"
+    ]
+  },
+  {
+    "id": 52,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Sharding",
+    "front": "Sharding What is it, and its costs?",
+    "back": "Split a table across many databases by a shard key (e.g. hospital_id, user_id). Costs: cross-shard joins / transactions are hard, rebalancing is painful, picking the wrong key creates hot shards. R1 plan: shard by hospital only if volume forces it; transactions never span shards.",
+    "tags": [
+      "primer",
+      "database"
+    ]
+  },
+  {
+    "id": 53,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Federation",
+    "front": "Federation What is it?",
+    "back": "Split a database by function / table, not by rows. Example: users DB, claims DB, payments DB. Simpler than sharding, but cross-database joins still hurt.",
+    "tags": [
+      "primer",
+      "database"
+    ]
+  },
+  {
+    "id": 54,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Denormalization",
+    "front": "Denormalization When is it worth it?",
+    "back": "Duplicate data to avoid expensive joins and speed reads. Cost: writes must update multiple places, risk of inconsistency. Use for read-heavy, well-understood queries.",
+    "tags": [
+      "primer",
+      "database"
+    ]
+  },
+  {
+    "id": 55,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "SQL Tuning",
+    "front": "SQL Tuning Three quick wins?",
+    "back": "Good indexes on filter / join columns; avoid SELECT * and expensive joins; partition large tables by time. Tighten schema (right types, not null where possible) and tune the query cache.",
+    "tags": [
+      "primer",
+      "database"
+    ]
+  },
+  {
+    "id": 56,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "NoSQL types",
+    "front": "NoSQL types Key-value vs Document vs Wide-column vs Graph?",
+    "back": "Key-value (Redis, DynamoDB): fast lookup by key. Document (MongoDB): JSON-like, flexible schema. Wide-column (Cassandra, Bigtable): huge write volume, time series. Graph (Neo4j): relationships are the query.",
+    "tags": [
+      "primer",
+      "database"
+    ]
+  },
+  {
+    "id": 57,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Cache-Aside",
+    "front": "Cache-Aside How does it work, and its failure mode?",
+    "back": "App checks cache first; on miss, reads DB, writes result to cache, returns it. Failure: stale data if the DB changes and cache is not invalidated; cache stampede on hot key expiry. Mitigate with TTL and request coalescing.",
+    "tags": [
+      "primer",
+      "cache"
+    ]
+  },
+  {
+    "id": 58,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Write-Through vs Write-Behind",
+    "front": "Write-Through vs Write-Behind Difference?",
+    "back": "Write-through: write to cache and DB synchronously. Safe, slower writes. Write-behind (write-back): write to cache, flush to DB async. Fast writes, risk of data loss if cache dies before flush. Refresh-ahead: reload hot keys before expiry.",
+    "tags": [
+      "primer",
+      "cache"
+    ]
+  },
+  {
+    "id": 59,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Message Queues vs Task Queues",
+    "front": "Message Queues vs Task Queues Difference?",
+    "back": "Message queue: async communication between services (Kafka, SQS). Decouples producer and consumer. Task queue: background jobs (Celery, Sidekiq). Decouples request from slow work. Both need idempotent consumers, because delivery is at-least-once.",
+    "tags": [
+      "primer",
+      "async"
+    ]
+  },
+  {
+    "id": 60,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Backpressure",
+    "front": "Backpressure What is it, and why does it matter?",
+    "back": "Slow the producer when the consumer cannot keep up, instead of buffering unboundedly and crashing. Mechanisms: bounded queues, rate limiting, load shedding, circuit breakers.",
+    "tags": [
+      "primer",
+      "async"
+    ]
+  },
+  {
+    "id": 61,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "TCP vs UDP",
+    "front": "TCP vs UDP When each?",
+    "back": "TCP: reliable, ordered, retransmits. Use for data that must arrive (HTTP, DB, files). UDP: fast, unordered, no retransmit. Use for video, gaming, DNS, where a lost packet is better than a late one.",
+    "tags": [
+      "primer",
+      "communication"
+    ]
+  },
+  {
+    "id": 62,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "REST vs RPC",
+    "front": "REST vs RPC Difference?",
+    "back": "REST: resources over HTTP, standard verbs, cacheable, human-readable. RPC (gRPC): call a remote function, binary, strongly typed, faster. Better for service-to-service.",
+    "tags": [
+      "primer",
+      "communication"
+    ]
+  },
+  {
+    "id": 63,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "Back-of-Envelope",
+    "front": "Back-of-Envelope 180M claims a year, how many per second? What did it justify in R1?",
+    "back": "180M / year = ~500k / day = ~6 per second average, ~20 per second peak. Design for 50 per second. That justified Postgres (500 writes per second peak is well within it) and Kafka for ordering / replay, not raw volume.",
+    "tags": [
+      "sid",
+      "r1",
+      "numbers"
+    ]
+  },
+  {
+    "id": 64,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "CTGT Policy Engine: Tiered Checks",
+    "front": "CTGT Policy Engine: Tiered Checks What are the tiers, and why tiered?",
+    "back": "Tier 0: structural rules, sub-ms. Tier 1: deterministic DLP / regex, 1-10 ms. Tier 2: small classifiers, 10-25 ms. Tier 3: LLM-as-judge, 100s of ms, async only. Tiering fits the 30 ms p99 budget and keeps decisions deterministic. LLM judges stay out of the hot path.",
+    "tags": [
+      "sid",
+      "ctgt"
+    ]
+  },
+  {
+    "id": 65,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "CTGT: Fail-Open vs Fail-Closed",
+    "front": "CTGT: Fail-Open vs Fail-Closed Your answer?",
+    "back": "Per policy severity, not global. Compliance-critical (PII egress, sanctions) fails closed. Advisory (style, tone) fails open with an alert. Global fail-closed is an outage; global fail-open makes the product decorative.",
+    "tags": [
+      "sid",
+      "ctgt"
+    ]
+  },
+  {
+    "id": 66,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "R1 Hospital Billing: Outbox Pattern",
+    "front": "R1 Hospital Billing: Outbox Pattern Why use it?",
+    "back": "Business change + outbox row in one DB transaction; relay publishes after. Event is sent if and only if the change was saved. Without it, you can save the claim and lose the event, or send the event and lose the claim.",
+    "tags": [
+      "sid",
+      "r1"
+    ]
+  },
+  {
+    "id": 67,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "R1: Idempotency",
+    "front": "R1: Idempotency Your one-line rule, and examples?",
+    "back": "Every consumer is idempotent. Kafka is at-least-once; the database makes the effect exactly-once. Examples: idempotency_key UNIQUE on claim, file_hash UNIQUE on remittance, UNIQUE(remittance_id, line_ref) on payment.",
+    "tags": [
+      "sid",
+      "r1"
+    ]
+  },
+  {
+    "id": 68,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "R1: Money Rules",
+    "front": "R1: Money Rules Three rules?",
+    "back": "Integer cents, never floats. Balances are sums of ledger rows, never an editable column. Ledger is append-only double-entry, every event writes balanced rows summing to zero.",
+    "tags": [
+      "sid",
+      "r1"
+    ]
+  },
+  {
+    "id": 69,
+    "deck": "sys",
+    "deck_name": "System Design - Primer",
+    "title": "CTGT Audit Trail",
+    "front": "CTGT Audit Trail Path and why Kafka acks=all?",
+    "back": "Gateway -> Kafka (acks=all, min.insync.replicas=2) -> Stream Processor -> ClickHouse (90 days hot) -> S3 Object Lock (WORM, years). Waiting ~2-5 ms for the Kafka ack means if the gateway responded, the record exists. No gap window.",
+    "tags": [
+      "sid",
+      "ctgt"
+    ]
+  },
+  {
+    "id": 70,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Continuous Batching",
+    "front": "Continuous Batching Why not static batching for LLM inference?",
+    "back": "Static batching waits for a full batch and every request waits for the longest one. Continuous (in-flight) batching adds new requests each decoding iteration and evicts finished ones, so the GPU stays full and short requests do not wait behind long ones. vLLM / TGI implement it.",
+    "tags": [
+      "genai",
+      "llm"
+    ]
+  },
+  {
+    "id": 71,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "KV Cache",
+    "front": "KV Cache What is it, and why does it limit concurrency?",
+    "back": "Stores key and value tensors for previous tokens so each decode step only computes attention for the new token. Without it, decoding is O(n^2). It limits concurrency because memory grows with batch x seq_len x layers x hidden dim. Mitigations: GQA, fp8/int8 cache, PagedAttention, prefix caching.",
+    "tags": [
+      "genai",
+      "llm"
+    ]
+  },
+  {
+    "id": 72,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Quantization vs Distillation",
+    "front": "Quantization vs Distillation Tradeoff in one line each?",
+    "back": "Quantization: lower precision of the same model (fp16 -> int8/int4). Fast, no retraining, 1-3% accuracy loss at int8, 4x memory saving at int4. Distillation: train a smaller student to mimic a larger teacher. Expensive upfront, loses edge-case reasoning, but gives architectural freedom and runs on commodity hardware.",
+    "tags": [
+      "genai",
+      "llm"
+    ]
+  },
+  {
+    "id": 73,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Prompting vs RAG vs Fine-Tuning",
+    "front": "Prompting vs RAG vs Fine-Tuning How do you choose?",
+    "back": "Prompting: behaviour, format, tone. Cheapest, try first. RAG: large / private / changing knowledge, with citations, no retraining. Fine-tuning: persistent behaviour, style, stable knowledge, smaller model at scale. Do not fine-tune for facts that change.",
+    "tags": [
+      "genai",
+      "rag"
+    ]
+  },
+  {
+    "id": 74,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Prompt Injection",
+    "front": "Prompt Injection Defence in depth?",
+    "back": "Treat tool outputs and retrieved docs as untrusted data, never instructions. Separate system / developer / user hierarchy, wrap untrusted content in delimiters, add an injection classifier, and validate tool calls against schemas. No single filter is enough.",
+    "tags": [
+      "genai",
+      "guardrails"
+    ]
+  },
+  {
+    "id": 75,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "PII Redaction",
+    "front": "PII Redaction Standard approach?",
+    "back": "Regex for structured IDs (SSN, cards, emails) + NER for names / addresses. Microsoft Presidio is the standard starting point. Redact before the model or logs, and in stored memory and traces too.",
+    "tags": [
+      "genai",
+      "guardrails"
+    ]
+  },
+  {
+    "id": 76,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "LLM-as-a-Judge",
+    "front": "LLM-as-a-Judge Failure modes?",
+    "back": "Position bias, verbosity bias, self-preference, prompt sensitivity, style over substance. Calibrate: human labels on a few hundred examples, detailed rubric, swap answer order in pairwise tests, pin the judge model version, re-calibrate when it changes.",
+    "tags": [
+      "genai",
+      "eval"
+    ]
+  },
+  {
+    "id": 77,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Token Budget for an Agent",
+    "front": "Token Budget for an Agent How do you enforce it?",
+    "back": "Tiered escalation: cheap classifier / small model triages first, only ambiguous or high-value claims reach the large model. Token ledger per claim, kill switch to human on exhaustion, cache policy embeddings, log cost per claim.",
+    "tags": [
+      "genai",
+      "agents"
+    ]
+  },
+  {
+    "id": 78,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "MCP: Auth and RBAC",
+    "front": "MCP: Auth and RBAC Where do you enforce them?",
+    "back": "MCP server authenticates the end user with OAuth, issues scoped tokens. RBAC is enforced in the server / gateway, not in the prompt. High-risk tools need step-up approval. Validate arguments against JSON schema before dispatch, and validate outputs before they re-enter context.",
+    "tags": [
+      "genai",
+      "mcp"
+    ]
+  },
+  {
+    "id": 79,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Kafka: Ordering, Duplicates, Lag",
+    "front": "Kafka: Ordering, Duplicates, Lag Three rules?",
+    "back": "Ordering only within a partition, so key by the entity you need ordered (user_id, claim_id). Duplicates: aim for idempotent consumers, not true exactly-once. Store processed IDs. Lag: monitor consumer group lag, scale consumers to partition count, batch inference.",
+    "tags": [
+      "genai",
+      "kafka"
+    ]
+  },
+  {
+    "id": 80,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Circuit Breaker",
+    "front": "Circuit Breaker When does it open, and what happens?",
+    "back": "Opens after N consecutive failures, then fails fast instead of hammering a down service. Periodically half-opens to probe recovery. R1 example: clearinghouse down 6 hours, breaker opens after 5 failures, checks once a minute, claims stay QUEUED.",
+    "tags": [
+      "sid",
+      "backend"
+    ]
+  },
+  {
+    "id": 81,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Optimistic Locking",
+    "front": "Optimistic Locking How does it work, and R1 example?",
+    "back": "Version column on the row. UPDATE ... WHERE version = 7. If 0 rows match, someone else changed it first, so reload and retry instead of overwriting. R1: payment bumps claim 7 -> 8, biller's edit fails cleanly with 'claim changed, review'.",
+    "tags": [
+      "sid",
+      "r1"
+    ]
+  },
+  {
+    "id": 82,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Async Retries",
+    "front": "Async Retries Backoff, jitter, timeouts?",
+    "back": "Exponential backoff + full jitter (sleep uniform 0 to cap) to avoid thundering herd. Per-attempt timeout + overall deadline. Only retry idempotent ops and transient errors (429, 5xx). Never blindly retry non-idempotent POSTs.",
+    "tags": [
+      "genai",
+      "backend"
+    ]
+  },
+  {
+    "id": 83,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Observability for Agents",
+    "front": "Observability for Agents What do you trace, and what alerts?",
+    "back": "Trace every run: agent steps, LLM calls, tool calls, retrieval as spans with model, tokens, latency, tool name, result. Cost per request (tokens x price), p99 latency, guardrail trigger rate, loop detection, human override rate. Redact PII at collection, traces leak PII otherwise.",
+    "tags": [
+      "genai",
+      "observability"
+    ]
+  },
+  {
+    "id": 84,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Idempotent Event Processing",
+    "front": "Idempotent Event Processing How do you get effectively-once?",
+    "back": "At-least-once delivery + idempotent application = effectively-once outcomes. Dedupe set must live in the same DB transaction as the effect (unique constraint on event id), not in memory. In-memory breaks with two workers or a restart.",
+    "tags": [
+      "sid",
+      "backend"
+    ]
+  },
+  {
+    "id": 85,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Rate Limiter: Token Bucket",
+    "front": "Rate Limiter: Token Bucket How does it work?",
+    "back": "Bucket holds tokens up to capacity, refills at a fixed rate. Request consumes one token, rejected if empty (429 + Retry-After). Allows bursts to capacity while enforcing average rate. Distributed: Redis + Lua for atomicity.",
+    "tags": [
+      "genai",
+      "backend"
+    ]
+  },
+  {
+    "id": 86,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Claims State Machine",
+    "front": "Claims State Machine Why put transitions in data?",
+    "back": "SUBMITTED -> UNDER_REVIEW -> APPROVED / DENIED -> APPEALED -> UNDER_REVIEW, APPROVED -> PAID. Transition table in data, not if-chains, makes it testable and extensible. Production adds audit history, optimistic locking, and events per transition.",
+    "tags": [
+      "sid",
+      "r37"
+    ]
+  },
+  {
+    "id": 87,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "RAG Pipeline: Minimal Version",
+    "front": "RAG Pipeline: Minimal Version Steps?",
+    "back": "Load -> chunk (500-1000 chars, 10-20% overlap) -> embed -> index (FAISS) -> retrieve top-k -> generate with citations. Production adds metadata filters, reranking, hybrid BM25 + vector, and evals on retrieval hit rate first.",
+    "tags": [
+      "genai",
+      "rag"
+    ]
+  },
+  {
+    "id": 88,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "System Design Interview: 60-Minute Plan",
+    "front": "System Design Interview: 60-Minute Plan Your R1 plan?",
+    "back": "0-5 intro + story, 5-10 clarifying questions, 10-15 back-of-envelope, 15-30 architecture, 30-45 walk 2 flows with a failure each, 45-55 deep dives, 55-60 your questions. Hard part first: for R1, correctness, not scale. Money must never be lost, double-counted, or late.",
+    "tags": [
+      "sid",
+      "interview"
+    ]
+  },
+  {
+    "id": 89,
+    "deck": "genai",
+    "deck_name": "Backend and GenAI",
+    "title": "Senior Signal",
+    "front": "Senior Signal What did Peter Britton flag, and how do you fix it?",
+    "back": "Communication and process were strong; gap was depth on tradeoffs, scalability, and operations, and tying decisions to prior experience. Fix: narrate tradeoffs as you choose data structures, handle edge cases unprompted, describe tests, and end with how it scales / is operated in production.",
+    "tags": [
+      "sid",
+      "interview"
+    ]
+  },
+  {
+    "id": 90,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Story: Business Education Merge",
+    "front": "Story: Business Education Merge One-minute version?",
+    "back": "Three programs, different entry points, had to become one entry point while routing each user to the right program, homepage, voucher, and exam pipeline. You built gatekeeping / Business Manager identification logic on a program hierarchy, classifying on submit, sometimes before signup. Result: signups +35%, about $50M incremental on a $150M program, 100k+ users a year. Use for CTGT: deterministic rule classification with versioned downstream effects.",
+    "tags": [
+      "sid",
+      "stories",
+      "meta"
+    ]
+  },
+  {
+    "id": 91,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Story: Partner Self-Serve Tool",
+    "front": "Story: Partner Self-Serve Tool One-minute version?",
+    "back": "Partners could not tell which program a user belonged to without backend checks, so requests kept coming back to you. You built a backend check across Business IDs against the program hierarchy, plus a React front end partners used themselves. Result: your weekly load fell from about 40 to under 5, turnaround down about 80%. Use for: self-serve, auditability, removing a bottleneck.",
+    "tags": [
+      "sid",
+      "stories",
+      "meta"
+    ]
+  },
+  {
+    "id": 92,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Story: Instagram Marketing Messages Beta",
+    "front": "Story: Instagram Marketing Messages Beta One-minute version?",
+    "back": "Beta interest arrived by email, onboarding status was hard to track. You built a form feeding a tracked sheet with status columns, collecting Instagram Business IDs, backed by a gatekeeper list controlling entry. Result: 150k businesses onboarded. Use for R37: claims workflow state, dedupe, idempotent entry, why you check edge cases unprompted.",
+    "tags": [
+      "sid",
+      "stories",
+      "meta"
+    ]
+  },
+  {
+    "id": 93,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Behavioural: Hard Tradeoff You Owned",
+    "front": "Behavioural: Hard Tradeoff You Owned Structure?",
+    "back": "Name the system, the two legitimate options, the deciding metric, what you chose, what it cost, what you would revisit. Keep it under two minutes, end with the outcome number (latency saved, incidents avoided, cost cut).",
+    "tags": [
+      "sid",
+      "stories",
+      "behavioral"
+    ]
+  },
+  {
+    "id": 94,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Behavioural: System You Owned End to End",
+    "front": "Behavioural: System You Owned End to End Structure?",
+    "back": "STAR + reflection, two minutes spoken. Situation, Task, Action, Result, what you learned. Example skeleton: LLM inference service breaching 2s p99, found queue wait not model speed, migrated to vLLM continuous batching, p99 4s -> under 1.5s, throughput 3x per GPU. Adapt to a real incident, quantify before and after, use 'I' for your decisions.",
+    "tags": [
+      "sid",
+      "stories",
+      "behavioral"
+    ]
+  },
+  {
+    "id": 95,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Behavioural: Deployment Slipped Three Weeks",
+    "front": "Behavioural: Deployment Slipped Three Weeks How do you tell the CTO?",
+    "back": "Early, with facts, ownership, and options. Never surprises or excuses. What happened, impact in business terms, root cause without blame, new plan with a credible date, options (scoped-down on time vs full scope late) with your recommendation, and what you need from them.",
+    "tags": [
+      "sid",
+      "stories",
+      "behavioral"
+    ]
+  },
+  {
+    "id": 96,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Seed: BAO Networks Upload Issue",
+    "front": "Seed: BAO Networks Upload Issue What is it good for?",
+    "back": "Retry mechanism, exponential backoff, validations. Perfect for R37 retry / idempotency follow-ups and CTGT resilience, once you add one line each for situation, what you personally did, and the measurable result.",
+    "tags": [
+      "sid",
+      "stories",
+      "seeds"
+    ]
+  },
+  {
+    "id": 97,
+    "deck": "stories",
+    "deck_name": "My Stories",
+    "title": "Seed: Code Quality 53% to 88%",
+    "front": "Seed: Code Quality 53% to 88% What is it good for?",
+    "back": "Improving code quality from 53% to 88% in a two-week sprint. Good 'raise the bar' seed for behavioural questions. Fill in what you changed and how it was measured before using it.",
+    "tags": [
+      "sid",
+      "stories",
+      "seeds"
+    ]
+  }
+]
